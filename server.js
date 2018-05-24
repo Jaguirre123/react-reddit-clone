@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Put API routes here, before the "catch all" route
 // For example, app.use('/api', require('./routes/api'));
-
+app.use('/api', require('./routes/api/posts'));
 // The following "catch all" route is necessary for
 // a SPA'sclient-side routing to properly work
 app.get('/*', function(req, res) {
