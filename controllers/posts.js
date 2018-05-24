@@ -1,7 +1,7 @@
 const Post = require('./../models/Post');
 
 function index(req, res) {
-  Post.find({}, function(err, posts) {
+  Post.find({}, function (err, posts) {
     if (err) res.send(err);
     else res.json(posts);
   });
@@ -17,26 +17,19 @@ function create(req, res) {
 
 function show(req, res) {
   Post.findById(req.params._id)
-  .populate('comments')
-  .exec(function(err, post) {
-    if (err) return res.status(500).json(err);
-    return res.status(200).json(post)
-  });
+    .populate('comments')
+    .exec(function (err, post) {
+      if (err) return res.status(500).json(err);
+      return res.status(200).json(post)
+    });
 }
 
 function update(req, res) {
-  // Post.findByIdAndUpdate(req.params.post._id, {title: req.body.title, content: req.body.content}, function(err, post) {
-  //   res.json(post);
-  // })
-  Post.findByIdAndUpdate(
-    req.params.post_id,
-    req.body,
-    { new: true },
-    (err, post) => {
-      if (err) return res.status(500).json(err);
-      return res.json(post);
-    }
-  );
+  Post.findByIdAndUpdate(req.params.post_id)
+    .then((err, post) => {
+    if(err) return res.status(500).json(err);
+    return res.status(200).json(post);
+  })
 }
 
 function destroy(req, res) {
@@ -47,9 +40,9 @@ function destroy(req, res) {
 }
 
 module.exports = {
-    index, 
-    create, 
-    show, 
-    update, 
-    destroy
+  index,
+  create,
+  show,
+  update,
+  destroy
 };

@@ -19,8 +19,8 @@ seed.then(() => {
     return Post.create([
         { title: 'Cats are cool', content: 'are creepy', thumbnail_image_url: 'https://i.imgur.com/43Otn.jpg', votes: 3, comments: [] },
         { title: 'Dogs are sick', content: 'man bestfriend', thumbnail_image_url: 'https://i.imgur.com/j6EuCvX.jpg', votes: 4, comments: [] },
-        { title: 'Koala have some shit', content: 'so stay away', thumbnail_image_url: 'https://i.imgur.com/FkfihI0.jpg', votes: 5, comments: [] },
-        { title: 'Dolphins are perverted', content: 'do not skinny dip', thumbnail_image_url: 'https://i.imgur.com/Xg7t0Gh.mp4', votes: 6, comments: [] },
+        { title: 'Koala are awesome', content: 'Aussy', thumbnail_image_url: 'https://i.imgur.com/FkfihI0.jpg', votes: 5, comments: [] },
+        { title: 'Lions fast', content: 'viscous', thumbnail_image_url: 'https://i.imgur.com/3J6XuQf.jpg', votes: 6, comments: [] },
     ])
 })
 

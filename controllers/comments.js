@@ -13,8 +13,8 @@ function create(req, res) {
 
 function update(req, res) {
     Post.findById(req.params.post_id)
-        .then((err, post) => {
-            let newComment = post.id(req.params.comment_id)
+        .then((post) => {
+            let newComment = post.comment.id(req.params.comment_id)
             newComment.content = req.body.content;
             newComment.votes = req.body.votes;
             post.save(function (err, post) {
@@ -26,11 +26,12 @@ function update(req, res) {
 
 function destroy(req, res) {
     Post.findById(req.params.post_id)
-    .then((err, post) => {
-        post.comments.id(req.params.id).remove();
+    .then((post) => {
+        post.comments.id(req.params.comment_id).remove();
         post.save(function(err) {
             res.status(200).json(post)
         })
+        .catch(err => console.log(err))
     })
 }
 

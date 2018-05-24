@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './TextPost.css';
+// import './TextPost.css';
 
 class TextPost extends Component {
   render() {
